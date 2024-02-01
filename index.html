@@ -3,37 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>       
+    <title>Document</title>
+    
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dff252a918.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
 </head>
 <body>
 
-    <div class="wrapper">
+    <div class="wrapper font-f">
 
-        <div class="head-container">
-            <p>DevDectective</p>
+        <div class="head-container ">
+            <h1>DevDectective</h1>
             <div class="mode-container">
-                <p mode-text></p>
-                <img src="" alt="" mode-icon>
+                <p mode-text>DARK</p>
+                <img src="" alt="DAR" mode-icon>
             </div>
         </div>
 
         <form class="search-form" data-searchform>
-            <img src="" alt="" >
-            <input  placeholder="Enter a GitHub username..." input-bar class="search-bar">
-            <button class="btn" type="submit" search-btn>Search</button>
+            <!-- <img src="" alt="" > -->
+            <i class="search-icon fa-solid fa-magnifying-glass"></i>
+            <input  placeholder="Enter a GitHub username..." input-bar class="search-bar font-f">
+            <button class="btn font-f" type="submit" search-btn>Search</button>
         </form>
 
         <div class="profile-container">
-            <img  profile-image>
+            <img class="profile-image" profile-image width="100" height="100" loading="lazy">
 
-            <!-- name data -->
+            <div class="profile-data">
+                            <!-- name data -->
             <div class="name-data">
                 <div class="nameAndurl">
-                    <h4 name-data></h4>
+                    <h2 name-data></h2>
                     <!-- <p github-url></p> -->
-                    <a github-url></a>
+                    <p join-date></p>
                 </div>
-                <p join-date></p>
+
+                <a github-url></a>
             </div>
 
             <!-- bio -->
@@ -64,31 +77,37 @@
                 
                 <div class="url-data">
                     <div class="link">
-                        <img src="" alt="">
+                        <!-- <img src="" alt=""> -->
+                        <i class="fa-solid fa-location-dot"></i>
                         <p location></p>
                     </div>
 
                     <div class="link">
-                        <img src="" alt="">
-                        <a portfolio-url></a>
+                        <!-- <img src="" alt=""> -->
+                        <i class="fa-brands fa-twitter"></i>
+                        <a twitter-url></a>
                     </div>
                 </div>
 
                 <div class="url-data">
                     <div class="link">
-                        <img src="" alt="">
-                        <a twitter-url></a>
+                        <!-- <img src="" alt=""> -->
+                        <i class="fa-solid fa-link"></i>
+                        <a portfolio-url></a>
                     </div>
 
                     <div class="link">
-                        <img src="" alt="">
+                        <!-- <img src="" alt=""> -->
+                        <i class="fa-solid fa-building"></i>
                         <p company-url></p>
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     </div>
     
+    <script src="https://kit.fontawesome.com/dff252a918.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>

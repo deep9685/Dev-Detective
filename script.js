@@ -20,7 +20,10 @@ const portfolioLink = document.querySelector("[portfolio-url]");
 const twitterLink = document.querySelector("[twitter-url]");
 const companyName = document.querySelector("[company-url]");
 
-
+const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
 let currentUserName = "thepranaygupta";
 console.log(1);
 fetchGitHubData(currentUserName);
@@ -31,6 +34,16 @@ async function fetchGitHubData(currentUserName)
         const response = await fetch(`https://api.github.com/users/${currentUserName}`);
 
         const data = await response.json();
+
+        if(data?.message == "Not Found")
+        {
+            // console.log("hahaha");
+            searchInput.value = "";
+            alert("user not found");
+            
+            return;
+        }
+        else
         renderUserData(data);
     }
     catch(e)
@@ -46,13 +59,14 @@ searchForm.addEventListener('submit', (e) => {
     console.log("i am here");
     if(currentUserName == "")
     {
-        console.log(2)
+        // console.log(2)
         currentUserName = "thepranaygupta";
+        fetchGitHubData(currentUserName);
         return
     }
     else
     {
-        console.log(3)
+        // console.log(3)
         fetchGitHubData(currentUserName);
     }
 })
@@ -67,7 +81,18 @@ function renderUserData(userDataInfo)
     Name.innerText = userDataInfo?.name;
     userName.innerText = `@${userDataInfo?.login}`;
     userName.href = `https://github.com/${userDataInfo?.login}`;
-    JoinDate.innerText = userDataInfo?.created_at;
+    
+    const createdAtDate = new Date(userDataInfo?.created_at);
+    // extract month
+    const day = createdAtDate.getDay();
+    const month = createdAtDate.getMonth();
+    const year = createdAtDate.getFullYear();
+    
+    
+    JoinDate.innerText = `Joined ${day} ${months[month]} ${year}`;
+    
+    
+    // JoinDate.innerText = userDataInfo?.created_at;
     BioData.innerText = userDataInfo?.bio;
     repoNum.innerText = userDataInfo?.public_repos;
     followerNum.innerText = userDataInfo?.followers;
