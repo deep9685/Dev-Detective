@@ -10,13 +10,16 @@
 }
 
 :root{
-    --lm-bg: #F6F8FF;
-    --lm-bg-content: #FEFEFE;
-    --lm-text: #4B6A9B;
-    --lm-text-alt: #2B3442;
-    --lm-shadow-xl: rgba(70, 88, 109, 0.25);
-    --lm-icon-bg: brightness(100%);
+    --lm-bg: #f6f8ff;
+    --lm-bg-content: #fefefe;
+    --lm-text: #4b6a9b;
+    --lm-text-alt: #2b3442;
     --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+    --lm-icon-bg: brightness(100%);
+    /* Btn */
+    --btn: #0079ff;
+    --btn-hover: #60abff;
 
 }
 
@@ -90,8 +93,16 @@ body{
     height: calc(100% - 20px);
     font-size: 20px;
     text-align: left;
+    color: var(--lm-text);
+
     /* height: 10%; */
 }
+
+.search-bar::placeholder {
+    color: var(--lm-text);
+    letter-spacing: -0.5px;
+    /* font-size: 13px; */
+  }
 
 .btn{
     cursor: pointer;
@@ -209,3 +220,33 @@ body{
     text-decoration: underline;
     cursor: pointer;
 }
+
+.dm-text {
+    color: var(--dm-text);
+  }
+  
+  .dm-bg {
+    background-color: var(--dm-bg);
+  }
+  
+  .dm-bg-sec {
+    background-color: var(--dm-bg-content);
+  }
+
+.active {
+    box-shadow: var(--lm-shadow);
+  }
+
+
+/* DARK MODE */
+:root {}
+
+/* dark mode class */
+/* .dark{
+    background-color: #141D2F;
+    color: var(--lm-bg);
+}
+
+.h1-dark{
+    color: white;
+} */
